@@ -1,15 +1,81 @@
 <main>
-    <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit earum impedit dolore libero
-        necessitatibus repellat hic veniam placeat minima. Ab, soluta id? Est mollitia ullam eius praesentium facere
-        pariatur esse.
-    </p>
 
-    <div>
-        <button class="btn btn-success m-3" onclick="crearTablaContactos()">MOSTRAR CONTACTOS!!</button>
+    <!-- BOTONES SUPERORES -->
+    <div class="d-flex justify-content-center my-3">
+        <button type="button" class="btn btn-success m-3" onclick="crearTablaContactos()">MOSTRAR
+            CONTACTOS!!</button>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary m-2" data-bs-toggle="modal" data-bs-target="#crearContactoModal">
+            Nuevo Contacto
+        </button>
     </div>
+
 
     <div class="container-sm mb-4" id="divContactos">
-
     </div>
+
+
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+        <div id="notificacion" class="toast align-items-center text-white border-0" role="alert" aria-live="assertive"
+            aria-atomic="true">
+
+            <div class="toast-header p-0">
+                <div class="icono-notificacion"><i id="iconoNotificacion"></i></div>
+                <strong class="me-auto" id="tituloNotificacion"></strong>
+
+                <button type="button" class="btn-close m-2" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+
+
+            <div class="toast-body" id="mensajeNotificacion">
+                Hello, world! This is a toast message.
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="crearContactoModal" tabindex="-1" aria-labelledby="tituloCrearContactoModal"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="tituloCrearContactoModal">NUEVO CONTACTO</h1>
+                </div>
+                <!-- FORMULARIO DE CREAR CONTACTO-->
+                <form onsubmit="insertarContacto()" method="dialog" id="formulario">
+                    <div class="modal-body">
+
+                        <div class="row mb-3">
+                            <div class="col-4">
+                                <label for="nombre" class="form-label">Nombres</label>
+                                <input type="text" class="form-control" name="nombre" id="nombre" required>
+                            </div>
+                            <div class="col-8">
+                                <label for="apellidos" class="form-label">Apellidos</label>
+                                <input type="text" class="form-control" name="apellidos" id="apellidos" required>
+                            </div>
+                        </div>
+
+
+                        <div class="input-group mb-3">
+                            <span class="input-group-text"><i class="bi bi-envelope-at-fill"></i></span>
+                            <input type="email" class="form-control" name="correo" id="correo" required>
+
+                            <span class="input-group-text"><i class="bi bi-telephone"></i></span>
+                            <input type="number" class="form-control" name="telf" id="telf" required>
+
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-success">Crear Contacto</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
 </main>
