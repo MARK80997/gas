@@ -5,8 +5,8 @@
         <button type="button" class="btn btn-success m-3" onclick="crearTablaContactos()">MOSTRAR
             CONTACTOS!!</button>
         <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary m-2" data-bs-toggle="modal" data-bs-target="#crearContactoModal">
-            Nuevo Contacto
+        <button type="button" class="btn btn-primary m-2" onclick="abrirModalCrearContacto()">
+            Crear Contacto
         </button>
     </div>
 
@@ -40,7 +40,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="tituloCrearContactoModal">NUEVO CONTACTO</h1>
+                    <h1 class="modal-title fs-5" id="tituloModal">NUEVO CONTACTO</h1>
                 </div>
                 <!-- FORMULARIO DE CREAR CONTACTO-->
                 <form onsubmit="insertarContacto()" method="dialog" id="formulario">
@@ -70,7 +70,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                        <button type="submit" class="btn btn-success">Crear Contacto</button>
+                        <button id="botonCrearModificar" type="submit" class="btn btn-success">Crear Contacto</button>
                     </div>
                 </form>
 
